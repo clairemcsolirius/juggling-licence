@@ -24,3 +24,11 @@ router.post('/juggling-balls-answer', function (req, res) {
     }
   
   })
+
+  router.post('/new/email-address',(req, res) => {
+    res.redirect('/new/code')
+  })
+
+  router.post('/new/code',(req, res) => {
+    res.redirect('/new/name')
+  })
