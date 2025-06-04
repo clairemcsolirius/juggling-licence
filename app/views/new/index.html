@@ -11,21 +11,6 @@
 
 {% block beforeContent %}
 
-  {{ govukBreadcrumbs({
-    items: [
-      {
-        text: "Home",
-        href: "#"
-      },
-      {
-        text: "Section",
-        href: "#"
-      },
-      {
-        text: "Subsection"
-      }
-    ]
-  }) }}
 
 {% endblock %}
 
@@ -34,11 +19,11 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-xl">
+      <h1 class="govuk-heading-l">
         {{ serviceName }}
       </h1>
 
-      <p>Use this service to:</p>
+      <p>To apply for a juggling license, you must tell us about your juggling abilities.</p>
 
       <ul class="govuk-list govuk-list--bullet">
         <li>do something</li>
@@ -50,7 +35,7 @@
 
       {{ govukButton({
         text: "Start now",
-        href: "/juggling-balls",
+        href: "/new/email-address",
         isStartButton: true
       }) }}
 
