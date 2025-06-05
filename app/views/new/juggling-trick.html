@@ -1,13 +1,11 @@
 {% extends "layouts/main.html" %}
 
-{% block pageTitle %}
-  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
-{% endblock %}
+{% set pageName="Juggling trick?" %}
 
 {% block beforeContent %}
-  {{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
 }) }}
 {% endblock %}
 

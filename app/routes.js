@@ -8,23 +8,6 @@ const router = govukPrototypeKit.requests.setupRouter()
 
 // Add your routes here
 
-// Run this code when a form is submitted to 'juggling-balls-answer'
-router.post('/juggling-balls-answer', function (req, res) {
-
-    // Make a variable and give it the value from 'how-many-balls'
-    var howManyBalls = req.session.data['how-many-balls']
-  
-    // Check whether the variable matches a condition
-    if (howManyBalls == "3 or more"){
-      // Send user to next page
-      res.redirect('/juggling-trick')
-    } else {
-      // Send user to ineligible page
-      res.redirect('/ineligible')
-    }
-  
-  })
-
   router.post('/new/email-address',(req, res) => {
     res.redirect('/new/code')
   })
@@ -39,4 +22,12 @@ router.post('/juggling-balls-answer', function (req, res) {
 
   router.post('/new/country',(req, res) => {
     res.redirect('/new/juggling-balls')
+  })
+
+  router.post('/new/juggling-balls',(req, res) => {
+    if(req.body.new.numberOfBalls == 'None - I cannot juggle'){
+    res.redirect('/new/ineligible')
+    } else {
+    res.redirect('/new/juggling-trick')
+    }
   })
