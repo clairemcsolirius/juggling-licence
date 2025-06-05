@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
 
-{% set pageName="Juggling trick?" %}
+{% set pageName="What is your most impressive juggling trick?" %}
 
 {% block beforeContent %}
 {{ govukBackLink({
@@ -18,14 +18,26 @@ href: "javascript:window.history.back()"
 
 
       {{ govukTextarea({
-        name: "most-impressive-trick",
-        id: "most-impressive-trick",
+        name: "[new][trick]",
+        id: "[new][trick]",
         label: {
-          text: "What is your most impressive juggling trick?",
+          text: pageName,
           classes: "govuk-label--l",
           isPageHeading: true
         },
-        value: data['most-impressive-trick']
+        value: data.new.trick
+      }) }}
+
+      {{ govukCharacterCount({
+        name: "[new][trick]",
+        id: "[new][trick]",
+        maxlength: 200,
+        label: {
+          text: pageName,
+          isPageHeading: true,
+          classes: "govuk-label--l"
+        },
+        value: data.new.trick
       }) }}
 
         {{ govukButton({
