@@ -2,53 +2,33 @@
 
 {% set pageName="Accessibility statement" %}
 
+{% set accessibilityContent %}
+# {{pageName}}
+
+This is paragraph text.
+
+## How accessible this website is
+
+- bullet 1
+- bullet 2
+- bullet 3
+
+### What to do if you cannot access parts of this website
+
+1. Item 1
+2. Item 2
+3. Item 3
+
+This is a [link](https://www.gov.uk) to GOV.UK.
+
+{% endset %}
+
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-
-    <h1 class="govuk-heading-l">
-      {{ pageName }}
-    </h1>
-    <p>
-    The GOV.UK Design System team (the team) is committed to making its website at design-system.service.gov.uk and the
-    GOV.UK Frontend documentation website at frontend.design-system.service.gov.uk accessible, in accordance with the
-    Public Sector Bodies (Websites and Mobile Applications) (No. 2) Accessibility Regulations 2018.
-  </p>
-  <p>
-    This accessibility statement applies to both websites and the components and patterns from the GOV.UK Frontend
-    codebase which appear in the examples throughout the Design System.
-  </p><p>
-    The team wants to make sure as many people as possible can use their websites. For example, making sure the website
-    text is as clear as possible to understand and making sure you can:</p>
-<ul class="govuk-list govuk-list--bullet">
-  <li>
-    change colours, contrast levels and fonts
-  </li>
-  <li>
-    zoom in up to 400% without the text spilling off the screen
-  </li>
-  <li>
-    listen to most of the website using a screen reader (including the most recent versions of JAWS, NVDA, TalkBack and
-    VoiceOver)
-  </li>
-  <li>
-    navigate most of the website using just a keyboard
-  </li>
-  <li>
-    navigate most of the website using speech recognition software
-  </li>
-  <li>
-    navigate most of the website using speech recognition software
-  </li>
-</ul>
-
-<p>AbilityNet has advice on making your device easier to use, if you have a disability.</p>
-
-<h2 class="govuk-heading-m">Compliance status</h2>
-<p>The Design System website at design-system.service.gov.uk is fully compliant with the Web Content Accessibility Guidelines (WCAG) version 2.2 AA standard.
-
-  The GOV.UK Frontend documentation website at frontend.design-system.service.gov.uk is fully compliant with the Web Content Accessibility Guidelines (WCAG) version 2.2 AA standard.)</p>
+    {{ accessibilityContent | govukMarkdown({headingsStartWith:'l'}) }}
+    
 
   </div>
 </div>
