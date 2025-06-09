@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
 
-{% set pageName="What is your most impressive juggling trick?" %}
+{% set pageName="What objects can you juggle?" %}
 
 {% block beforeContent %}
 {{ govukBackLink({
@@ -33,7 +33,7 @@ href: "javascript:window.history.back()"
       name: "[new][objects]",
       fieldset: {
       legend: {
-      text: "Legend text",
+      text: pageName,
       isPageHeading: true,
       classes: "govuk-fieldset__legend--l"
       }
@@ -41,6 +41,7 @@ href: "javascript:window.history.back()"
       hint: {
       text: "Select all that apply"
       },
+      values: data.new.objects,
       items: [
       {
       value: "Knives",
@@ -58,7 +59,7 @@ href: "javascript:window.history.back()"
       value: "Other",
       text: "Other",
       conditional: {
-        html: otherInput
+      html: otherInput
       }
       }
       ]
