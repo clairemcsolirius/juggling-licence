@@ -9,7 +9,11 @@ const router = govukPrototypeKit.requests.setupRouter()
 // Add your routes here
 
   router.post('/new/email-address',(req, res) => {
+    if(req.query.returnUrl){
+      res.redirect(req.query.returnUrl)
+    } else{
     res.redirect('/new/code')
+    }
   })
 
   router.post('/new/code',(req, res) => {
@@ -17,11 +21,19 @@ const router = govukPrototypeKit.requests.setupRouter()
   })
 
   router.post('/new/name',(req, res) => {
+    if(req.query.returnUrl){
+      res.redirect(req.query.returnUrl)
+    }else {
     res.redirect('/new/country')
+  }
   })
 
   router.post('/new/country',(req, res) => {
+    if(req.query.returnUrl){
+      res.redirect(req.query.returnUrl)
+    }else{
     res.redirect('/new/juggling-balls')
+    }
   })
 
   router.post('/new/juggling-balls',(req, res) => {
@@ -33,9 +45,17 @@ const router = govukPrototypeKit.requests.setupRouter()
   })
 
   router.post('/new/juggling-trick',(req, res) => {
+    if(req.query.returnUrl){
+      res.redirect(req.query.returnUrl)
+    }else{
     res.redirect('/new/juggling-objects')
+    }
   })
 
   router.post('/new/juggling-objects',(req, res) => {
+    if(req.query.returnUrl){
+      res.redirect(req.query.returnUrl)
+    }else{
     res.redirect('/new/check')
+    }
   })
